@@ -12,11 +12,15 @@
 #include <stdexcept>
 #include "Square.h"
 #include <iostream>
+//#define DEBUG
+
 Square::Square(double newSide): Rectangle(newSide, newSide) {
     if (newSide <= 0){
         throw std::invalid_argument("length and width must be > 0");
     }
+#ifdef DEBUG
     std::cout << "Side Length is: " << newSide << std::endl;
+#endif
 }
 
 double Square::getSide() {
