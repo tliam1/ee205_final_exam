@@ -23,11 +23,3 @@ double Square::getSide() {
     return getLength();
 }
 
-
-/*Mammal::Mammal(const float newMaxWeight, const string &newSpecies) : Animal(newMaxWeight, MAMMAL_NAME, newSpecies) {
-    validateSpecies(newSpecies);
-    if (newMaxWeight <= 0) {
-        cout << "Bad max weight" << endl;
-        assert(false);
-    }
-    */

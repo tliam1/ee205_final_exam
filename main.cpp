@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Square.h"
+//#define DEBUG
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
@@ -11,5 +12,13 @@ int main() {
     std::cout << "The area of myRectangle is: "
               << myRectangle.compute_area()
               << std::endl;
+
+#ifdef DEBUG
+    Square mySquare1(0);
+    std::cout << "The area of mySquare is: "
+              << mySquare1.compute_area()
+              << std::endl;
+#endif
+
     return 0;
 }
