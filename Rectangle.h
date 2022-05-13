@@ -17,9 +17,8 @@
 
 class Rectangle : public Shape{
 protected:
-    double length;
-    double width;
-    Rectangle(double newLength, double newWidth);
+    double length = 0;
+    double width = 0;
 
 public:
     double getLength() const;
@@ -27,6 +26,8 @@ public:
     double getWidth() const;
 
     double compute_area() noexcept override;
+
+    Rectangle(double newLength, double newWidth);
 };
 
 

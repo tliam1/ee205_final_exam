@@ -10,11 +10,16 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #include "Rectangle.h"
+#include <stdexcept>
+#include <iostream>
 
+//#define DEBUG
 Rectangle::Rectangle(double newLength, double newWidth) {
     if (newLength <= 0 || newWidth <= 0){
-        // throw an exception
+        throw std::invalid_argument("length and width must be > 0");
     }
+    length = newLength;
+    width = newWidth;
 }
 
 double Rectangle::getLength() const {
@@ -26,6 +31,9 @@ double Rectangle::getWidth() const {
 }
 
 double Rectangle::compute_area() noexcept {
+#ifdef DEBUG
+    std::cout << getLength() << "*" << getWidth() << std::endl;
+#endif
     return getLength() * getWidth();
 }
 

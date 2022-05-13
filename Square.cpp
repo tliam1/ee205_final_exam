@@ -9,4 +9,25 @@
 /// @date   13_May_2022
 ///////////////////////////////////////////////////////////////////////////////
 
+#include <stdexcept>
 #include "Square.h"
+#include <iostream>
+Square::Square(double newSide): Rectangle(newSide, newSide) {
+    if (newSide <= 0){
+        throw std::invalid_argument("length and width must be > 0");
+    }
+    std::cout << "Side Length is: " << newSide << std::endl;
+}
+
+double Square::getSide() {
+    return getLength();
+}
+
+
+/*Mammal::Mammal(const float newMaxWeight, const string &newSpecies) : Animal(newMaxWeight, MAMMAL_NAME, newSpecies) {
+    validateSpecies(newSpecies);
+    if (newMaxWeight <= 0) {
+        cout << "Bad max weight" << endl;
+        assert(false);
+    }
+    */
